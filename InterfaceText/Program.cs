@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
 
 namespace InterfaceText
 {
@@ -6,7 +9,23 @@ namespace InterfaceText
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var filename = @"randomtext.txt";
+
+
+            var text1 = new SimpleText();
+            if (text1.LoadText(filename))
+            {
+                Console.WriteLine("File found");
+                Console.WriteLine(text1.CountWords());
+            }
+            else
+            {
+                Console.WriteLine("File not found");
+            }
+            
+
+            Console.ReadLine();
+            
         }
     }
 }
